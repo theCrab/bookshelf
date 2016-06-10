@@ -1,7 +1,7 @@
 module Web::Controllers::Books
   class New
     include Web::Action
-    include Authentication::Skip
+    include Hanami::Fumikiri::Skip
 
     def call(params)
     end

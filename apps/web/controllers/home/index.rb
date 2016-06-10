@@ -1,7 +1,7 @@
 module Web::Controllers::Home
   class Index
     include Web::Action
-    include Authentication::Skip
+    include Hanami::Fumikiri::Skip
 
     def call(params)
     end

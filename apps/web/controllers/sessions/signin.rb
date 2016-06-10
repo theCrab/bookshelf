@@ -3,6 +3,7 @@ require 'bcrypt'
 module Web::Controllers::Sessions
   class Signin
     include Web::Action
+    include Hanami::Fumikiri::Skip
 
     params do
       param :signin do
@@ -14,7 +15,7 @@ module Web::Controllers::Sessions
     def call(params)
       if params.valid?
         authenticate_user
-        self.headers.merge!({ 'Authentication' => "Bearer #{@token.result}" })
+        headers.merge!({ 'Authentication' => "Bearer #{@token}" })
 
         redirect_to "/"
       end
@@ -39,8 +40,7 @@ module Web::Controllers::Sessions
 
     def authenticate_user
       if !user.nil? && valid_password?
-        payload = { data: { sub: user.id, exp: (Time.now + 800407).to_i, aud: 'admin' }, dothis: 'issue' }
-        @token = Fumikiri.new(payload).call
+        @token = create_token(user).result
       end
     end
   end

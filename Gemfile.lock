@@ -1,3 +1,26 @@
+GIT
+  remote: git://github.com/hanami/model.git
+  revision: 25826b81aa0bfa317e6786b823911d5a2d7966df
+  specs:
+    hanami-model (0.7.0)
+      hanami-utils (~> 0.8)
+      sequel (~> 4.9)
+
+GIT
+  remote: git://github.com/hanami/utils.git
+  revision: 9c150d6f9fe2b62aa984fd0e2641df44705633ac
+  specs:
+    hanami-utils (0.8.0)
+
+GIT
+  remote: git://github.com/theCrab/hanami-fumikiri.git
+  revision: 45735d9f9601d5c48d784450cf32aa4d9211411e
+  specs:
+    hanami-fumikiri (0.0.1)
+      hanami-utils
+      jwt
+      rack
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -10,7 +33,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coderay (1.1.0)
+    coderay (1.1.1)
     dotenv (2.1.1)
     hanami (0.7.3)
       bundler (~> 1.6)
@@ -38,13 +61,9 @@ GEM
       hanami-utils (~> 0.7)
       mail (~> 2.5)
       tilt (~> 2.0, >= 2.0.1)
-    hanami-model (0.6.2.1)
-      hanami-utils (~> 0.7)
-      sequel (~> 4.9)
     hanami-router (0.6.2)
       hanami-utils (~> 0.7)
       http_router (~> 0.11)
-    hanami-utils (0.7.2)
     hanami-validations (0.5.0)
       hanami-utils (~> 0.7)
     hanami-view (0.6.1)
@@ -60,11 +79,13 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
-    pry (0.10.1)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    pkg-config (1.1.7)
+    pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -93,9 +114,9 @@ DEPENDENCIES
   bundler
   capybara
   hanami
-  hanami-model
-  hanami-utils
-  jwt
+  hanami-fumikiri!
+  hanami-model!
+  hanami-utils!
   minitest
   pry
   puma

@@ -1,7 +1,7 @@
 module Web::Controllers::Books
   class Create
     include Web::Action
-    include Authentication::Skip
+    include Hanami::Fumikiri::Skip
 
     expose :book
 

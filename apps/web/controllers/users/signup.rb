@@ -1,14 +1,15 @@
+require 'pry'
 module Web::Controllers::Users
   class Signup
     include Web::Action
-    include Authentication::Skip
+    prepend Hanami::Fumikiri::Skip
     expose :user
 
     params do
       param :user do
         param :email,    presence: true
-        # param :username, presence: true
         param :password, presence: true
+        param :username
       end
     end
 
@@ -19,8 +20,5 @@ module Web::Controllers::Users
       end
     end
 
-    private
-    def create_user
-    end
   end
 end

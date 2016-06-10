@@ -1,7 +1,7 @@
 module Web::Controllers::Books
   class Index
     include Web::Action
-    include Authentication::Skip
+    include Hanami::Fumikiri::Skip
     expose :books
 
     def call(params)
